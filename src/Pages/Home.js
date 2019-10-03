@@ -4,57 +4,23 @@ import { Button } from "react-bootstrap";
 import "../static/App.css";
 import "../static/devices.min.css";
 
-import CourseList from "../components/CourseList";
+import ModuleCarousel from "../components/ModuleCarousel";
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    const existingToken = sessionStorage.getItem("token");
-    const api_key =
-      window.location.search.split("=")[0] === "?api_key"
-        ? window.location.search.split("=")[1]
-        : null;
-    // if (!api_key && !existingToken) {
-    //   window.location.replace("https://127.0.0.1:5000/login");
-    // }
-
-    if (api_key) {
-      sessionStorage.setItem("token", api_key);
-    }
 
     this.state = {
-      sideDrawerOpen: false,
+      user: props.user,
+      token: props.token,
       index: 0,
-      user: { id: null },
-      token: existingToken || api_key
+      user: { id: null }
     };
   }
-
-  async componentDidMount() {
-    this.fetchUser();
-  }
-
-  drawerToggleClickHandler = () => {
-    this.setState(prevState => {
-      return { sideDrawerOpen: !prevState.sideDrawerOpen };
-    });
-  };
 
   handleIndexChange = value => {
     this.setState({ index: value });
     console.log(this.CourseDisplay);
-  };
-
-  fetchUser = async () => {
-    const response = await fetch("https://127.0.0.1:5000/test", {
-      headers: new Headers({
-        Authorization: `Token ${this.state.token}`,
-        "Content-Type": "application/json"
-      })
-    });
-    const data = await response.json();
-    this.setState({ user: data });
-    console.log("TEST THIS DATA", data);
   };
 
   render() {
@@ -143,9 +109,9 @@ class Home extends Component {
                   <div className="sensor"></div>
                   <div className="speaker"></div>
                   <div className="screen">
-                    <CourseList
+                    <ModuleCarousel
                       handleIndexChange={this.handleIndexChange}
-                    ></CourseList>
+                    ></ModuleCarousel>
                   </div>
                   <div className="home"></div>
                   <div className="bottom-bar"></div>

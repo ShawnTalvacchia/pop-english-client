@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "../static/profile.css";
 import { Route, Switch, Link } from "react-router-dom";
+import { Image } from "semantic-ui-react";
+
 import Modules from "./Modules";
 import SingleModule from "./SingleModule";
 import NewModuleForm from "./CreateModule";
+import EditModule from "../components/EditModule";
+
 import EditProfile from "./EditProfile";
 import Profile from "./Profile";
 
 const Dashboard = props => {
   const [user, setUser] = useState(props.user);
   const [token, setToken] = useState(props.token);
+  console.log("user", user);
 
   return (
     <div className="container-fluid">
@@ -17,6 +22,27 @@ const Dashboard = props => {
         <nav className="col-md-2 d-none d-md-block bg-light sidebar">
           <div className="sidebar-sticky">
             <ul className="nav flex-column">
+              <div>
+                {user.img ? (
+                  <Image
+                    src={user.img}
+                    alt="avatar-img"
+                    style={{ padding: ".5rem" }}
+                    size="small"
+                    circular
+                    centered
+                  />
+                ) : (
+                  <Image
+                    src="https://i.ibb.co/syTH6dp/avatar-img.png"
+                    alt="avatar-img"
+                    size="medium"
+                    rounded
+                    centered
+                    // style={{ padding: ".5rem" }}
+                  ></Image>
+                )}
+              </div>
               <li className="nav-item">
                 <Link className="nav-link" to="./modules">
                   <span data-feather="file"></span>
@@ -29,12 +55,12 @@ const Dashboard = props => {
                   Orders
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="./courses">
                   <span data-feather="file"></span>
                   Courses
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
             {/* <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -62,7 +88,16 @@ const Dashboard = props => {
             <Route
               exact
               path="/dashboard/modules/:id"
-              component={props => <SingleModule {...props} token={token} />}
+              component={props => (
+                <SingleModule {...props} token={token} user={user} />
+              )}
+            />
+            <Route
+              exact
+              path="/dashboard/modules/:id/edit"
+              component={props => (
+                <EditModule {...props} token={token} user={user} />
+              )}
             />
             <Route
               exact

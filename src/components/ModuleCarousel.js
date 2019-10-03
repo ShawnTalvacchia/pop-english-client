@@ -62,7 +62,7 @@ const pages = [
   )
 ];
 
-export default function CourseList(props) {
+export default function ModuleCarousel(props) {
   const [index, set] = useState(0);
   const onClick = useCallback(() => set(state => (state + 1) % 6), []);
   const transitions = useTransition(index, p => p, {

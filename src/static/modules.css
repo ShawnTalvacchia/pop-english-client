@@ -1,0 +1,36 @@
+@media only screen and (max-width: 600px) {
+  .imgDisplay {
+    display: none !important;
+  }
+}
+
+.card-list {
+  list-style: none;
+  margin: 0.8rem 0 0.8rem -40px;
+}
+
+.single-module-img {
+  max-width: 100%;
+  width: 20rem;
+}
+
+.description-row {
+  padding: 25px;
+}
+
+.title-text a {
+  color: #131141;
+}
+.title-text a:hover {
+  color: #fbe45c;
+}
+
+.date {
+  color: #ef3c6b;
+  font-weight: bold;
+}
+
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+}

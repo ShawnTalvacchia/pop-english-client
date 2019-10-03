@@ -1,0 +1,43 @@
+import React, { Component } from "react";
+import { Accordion, Icon, Image } from "semantic-ui-react";
+
+export default class AccordionExampleStandard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeIndex: 0, comments: this.props.reviews };
+  }
+
+  handleClick = (e, titleProps) => {
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
+
+    this.setState({ activeIndex: newIndex });
+  };
+
+  render() {
+    const { activeIndex } = this.state;
+    console.log(this.props.reviews);
+
+    return (
+      <div>
+        {this.state.comments.map(({ comments, name, img }) => (
+          <Accordion>
+            <Accordion.Title
+              active={activeIndex === 0}
+              index={0}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
+              <Image src={img} avatar />
+              {name}
+            </Accordion.Title>
+            <Accordion.Content active={activeIndex === 0}>
+              {comments}
+            </Accordion.Content>
+          </Accordion>
+        ))}
+      </div>
+    );
+  }
+}
