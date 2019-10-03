@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "../static/App.css";
-const URL = REACT_APP_BACKEND_URL;
+const URL = process.env.REACT_APP_BACKEND_URL;
 
 function Login(props) {
   const [email, setEmail] = useState("a");

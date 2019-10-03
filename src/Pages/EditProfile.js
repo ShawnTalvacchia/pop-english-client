@@ -4,7 +4,7 @@ import { DateInput } from "semantic-ui-calendar-react";
 import moment from "moment";
 import "moment/locale/ru";
 
-const URL = "REACT_APP_BACKEND_URL";
+const URL = "Rprocess.env.EACT_APP_BACKEND_URL";
 
 class EditProfile extends React.Component {
   constructor(props) {
