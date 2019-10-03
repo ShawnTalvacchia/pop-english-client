@@ -12,7 +12,7 @@ import { Route, Switch } from "react-router-dom";
 import Toolbar from "./components/Toolbar/Toolbar";
 
 import { BrowserRouter } from "react-router-dom";
-const URL = "http://127.0.0.1:5000";
+const URL = "REACT_APP_BACKEND_URL";
 class App extends React.Component {
   constructor(props) {
     super(props);

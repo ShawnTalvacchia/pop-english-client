@@ -57,9 +57,7 @@ const Register = props => {
       }
     }
   };
-  // pg_dump -U USERNAME DATABASE --no-owner --no-acl -f backup.sql
-  // pg_dump -U shawn pop-english --no-owner --no-acl -f backup.sql
-
+  
   if (user.id !== null) window.location.replace(window.location.origin);
   else
     return (
