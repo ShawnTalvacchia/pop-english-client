@@ -14,12 +14,14 @@ function useFetch(url) {
     });
     const json = await response.json();
     console.log(json);
-    json.avg = 0;
-    json.modules.map(({ reviews }) => {
-      json.avg = json.avg + (reviews.interaction + reviews.knowledge) / 2;
-    });
-    json.avg = json.avg / json.modules.length;
-    setData(json);
+    if (json.modules && json.modules.length > 0) {
+      json.avg = 0;
+      json.modules.map(({ reviews }) => {
+        json.avg = json.avg + (reviews.interaction + reviews.knowledge) / 2;
+      });
+      json.avg = json.avg / json.modules.length;
+    }
+    setData(await json);
     setLoading(false);
   }
   useEffect(() => {

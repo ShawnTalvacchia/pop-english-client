@@ -19,7 +19,7 @@ const Profile = props => {
   const [id, setId] = useState(props.match.params.id);
   console.log("props", props);
 
-  const [data, loading] = useFetch( URL + `profiles/${id}`);
+  const [data, loading] = useFetch(URL + `profiles/${id}`);
   console.log("TESTING", id, data);
 
   return (
@@ -33,7 +33,6 @@ const Profile = props => {
               <h2>
                 {data.profile.first_name} {data.profile.last_name}
               </h2>
-              <p>Reviews</p>
               <p>{data.profile.about}</p>
               <h6>About</h6>
               <Rating
@@ -83,7 +82,7 @@ const Profile = props => {
                                 .format("MMM Do YY")}
                             </span>
                           </Card.Meta>
-                          <Grid columns="equal">
+                          <Grid columns="equal" style={{ padding: "0 3%" }}>
                             <Grid.Row>
                               <Grid.Column>
                                 <h6>Interaction:</h6>

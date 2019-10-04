@@ -44,17 +44,17 @@ class Home extends Component {
     };
     const courseTextDisplay = {
       "0":
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies. Amet commodo nulla facilisi nullam vehicula ipsum a. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Dui ut ornare lectus sit amet. ",
+        "Got a show you love? How about a particular focus? We can match you with a mentor to match all your goals and requirements. ",
       "1":
-        "Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies. Amet commodo nulla facilisi nullam vehicula ipsum a. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Dui ut ornare lectus sit amet.",
+        "Designed for all IELTS candidates who want to achieve a score of 6.5 or higher in the Speaking and Listening modules. Learners are guided step-by-step through the different stages of the speaking and listening modules, ‘Modern Family’ to as a backdrop to connect topics that are likely to occur in the IELTS examination.",
       "2":
-        "Color sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies. Amet commodo nulla facilisi nullam vehicula ipsum a. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Dui ut ornare lectus sit amet.",
+        "The words that we choose can make a big difference to whether other people understand us. Consider for example, communicating with a young child, or with someone who does not speak our own language very well. Under those circumstances, you need to use simple language, short sentences, and check understanding regularly.",
       "3":
-        "Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies. Amet commodo nulla facilisi nullam vehicula ipsum a. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Dui ut ornare lectus sit amet.",
+        "Interpersonal skills are the skills we use every day when we communicate and interact with other people, both individually and in groups. People with strong interpersonal skills are often more successful in both their professional and personal lives.",
       "4":
-        "Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies. Amet commodo nulla facilisi nullam vehicula ipsum a. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Dui ut ornare lectus sit amet.",
+        "Listening is the ability to accurately receive and interpret messages in the communication process. Listening is key to all effective communication.",
       "5":
-        "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies. Amet commodo nulla facilisi nullam vehicula ipsum a. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Dui ut ornare lectus sit amet."
+        "Many people feel terrified when asked to talk in public, especially to bigger groups. However, these fears can be reduced by good preparation, which will also lay the groundwork for making an effective presentation. "
     };
 
     return (
@@ -66,7 +66,9 @@ class Home extends Component {
           <div className="container">
             <div className="row">
               <div className="col-xl-6 col-lg-7 col-md-8">
-                <div className="title">Speak like a Native Speaker</div>
+                <div className="title">
+                  Speaking skills to advance your life!
+                </div>
                 <div className="spacer-a"></div>
                 <div className="subtitle">
                   Fluency comes when we can move beyond theory and get to real
@@ -123,37 +125,64 @@ class Home extends Component {
           </div>
         </section>
         <section id="product-description">
-          <div className="row">
-            <h3 className="pd-title">
-              Communication skills to advance your life
-            </h3>
-          </div>
-          <div className="row">
-            <div className="col-md-6">
-              <img className="hero-img" src="../images/study.png"></img>
+          <div className="container">
+            <div className="row">
+              <h3 className="pd-title">Make practice meaningful!</h3>
             </div>
-            <div className="col-md-6 product-info">
-              <div className="info-line">
-                <h3 style={{ fontSize: "2rem" }}>We make practice</h3>
-                <TextLoop
-                  interval={6000}
-                  springConfig={{ stiffness: 180, damping: 8 }}
-                  className="info-line-loop"
-                >
-                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
-                    interesting
-                  </h2>
-                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
-                    targeted
-                  </h2>
-                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
-                    convenient
-                  </h2>
-                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
-                    releveant
-                  </h2>
-                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>fun</h2>
-                </TextLoop>
+            <div className="row">
+              <div className="col-md-7 hero-col">
+                <img className="hero-img2" src="../images/study.png"></img>
+                <div className="info-line row">
+                  <div className="before-transition-text">
+                    <h3 style={{ color: "white", letterSpacing: ".3rem" }}>
+                      We make practice
+                    </h3>
+                    <TextLoop
+                      interval={6000}
+                      springConfig={{ stiffness: 180, damping: 8 }}
+                      className="info-line-loop"
+                    >
+                      <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                        interesting
+                      </h2>
+                      <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                        targeted
+                      </h2>
+                      <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                        convenient
+                      </h2>
+                      <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                        releveant
+                      </h2>
+                      <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                        fun
+                      </h2>
+                    </TextLoop>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-5">
+                <div className="info-text">
+                  <h6 style={{ color: "#ef3c6b", fontSize: "1.3rem" }}>
+                    Why study with us?
+                  </h6>
+                  <p style={{ marginTop: ".8rem" }}>
+                    Our group courses are 6 weeks long. Each week you will
+                    receive learning materials to breakdown and understand the
+                    vidoe content. You will connect to a community of learners
+                    with various speaking tasks. Choose one task and submit your
+                    response for a mentor to review and provide feedback. All
+                    done on your schedule, from your computer or phone.
+                  </p>
+                  <h6 style={{ color: "#ef3c6b", fontSize: "1.3rem" }}>
+                    Looking for more?
+                  </h6>
+                  <p style={{ marginTop: ".8rem" }}>
+                    Contact Now to be matched with a mentor for personalized
+                    instrution. We work around your schedule, aims, and
+                    interests.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

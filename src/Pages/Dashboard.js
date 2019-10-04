@@ -3,8 +3,10 @@ import "../static/profile.css";
 import { Route, Switch, Link } from "react-router-dom";
 import { Image } from "semantic-ui-react";
 
+import Mentors from "./Mentors";
 import Modules from "./Modules";
 import SingleModule from "./SingleModule";
+import Enrolled from "./Enrolled";
 import NewModuleForm from "./CreateModule";
 import EditModule from "../components/EditModule";
 
@@ -44,15 +46,15 @@ const Dashboard = props => {
                 )}
               </div>
               <li className="nav-item">
-                <Link className="nav-link" to="./modules">
+                <Link className="nav-link" to="./enrolled">
                   <span data-feather="file"></span>
-                  Courses
+                  My Courses
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="./test">
+                <Link className="nav-link" to="./modules">
                   <span data-feather="file"></span>
-                  Orders
+                  Upcoming
                 </Link>
               </li>
               {/* <li className="nav-item">
@@ -115,6 +117,16 @@ const Dashboard = props => {
               exact
               path="/dashboard/profiles/:id/edit"
               component={props => <EditProfile {...props} token={token} />}
+            />
+            <Route
+              exact
+              path="/dashboard/enrolled"
+              component={props => <Enrolled {...props} token={token} />}
+            />
+            <Route
+              exact
+              path="/dashboard/mentors"
+              component={props => <Mentors {...props} token={token} />}
             />
           </Switch>
         </main>

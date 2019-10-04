@@ -8,6 +8,7 @@ export default class AccordionExampleStandard extends Component {
   }
 
   handleClick = (e, titleProps) => {
+    console.log(titleProps);
     const { index } = titleProps;
     const { activeIndex } = this.state;
     const newIndex = activeIndex === index ? -1 : index;
@@ -17,27 +18,36 @@ export default class AccordionExampleStandard extends Component {
 
   render() {
     const { activeIndex } = this.state;
-    console.log(this.props.reviews);
+    console.log(activeIndex);
 
     return (
-      <div>
-        {this.state.comments.map(({ comments, name, img }) => (
-          <Accordion>
-            <Accordion.Title
-              active={activeIndex === 0}
-              index={0}
-              onClick={this.handleClick}
-            >
-              <Icon name="dropdown" />
-              <Image src={img} avatar />
-              {name}
-            </Accordion.Title>
-            <Accordion.Content active={activeIndex === 0}>
-              {comments}
-            </Accordion.Content>
-          </Accordion>
-        ))}
-      </div>
+      <Accordion>
+        <Accordion.Title
+          active={activeIndex === 1}
+          index={1}
+          onClick={this.handleClick}
+        >
+          <Icon name="dropdown" />
+          Reviews
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 1}>
+          {this.state.comments.map(({ comments, name, img }, idx) => (
+            <Accordion>
+              <Accordion.Title
+                active={activeIndex === idx}
+                index={idx}
+                onClick={this.handleClick}
+              >
+                <Image src={img} avatar />
+                {name}
+              </Accordion.Title>
+              <Accordion.Content active={activeIndex === idx}>
+                {comments}
+              </Accordion.Content>
+            </Accordion>
+          ))}
+        </Accordion.Content>
+      </Accordion>
     );
   }
 }
