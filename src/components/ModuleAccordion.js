@@ -55,9 +55,7 @@ export default class ModuleAccordion extends Component {
           <Icon name="dropdown" />
           Reviews
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
-          <p>Fill this in later if you can get to it. Or delete it!!</p>
-        </Accordion.Content>
+        <Accordion.Content active={activeIndex === 1}></Accordion.Content>
         <div style={{ display: `${this.state.display}` }}>
           <Accordion.Title
             active={activeIndex === 2}
