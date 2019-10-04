@@ -20,7 +20,7 @@ class Mentors extends React.Component {
       data: []
     };
   }
-
+  //version 1
   componentDidMount() {
     this.fetchData();
   }
