@@ -64,7 +64,7 @@ const Register = props => {
     return (
       <div className="login-register-section">
         <section id="left-side"></section>
-        <section id="register-login-side">
+        <div id="register-login-side">
           <div className="register-container">
             <div className="header-section text-center">
               <h2>Sign Up Now</h2>
@@ -141,7 +141,7 @@ const Register = props => {
               </div>
             </Form>
           </div>
-        </section>
+        </div>
       </div>
     );
 };
