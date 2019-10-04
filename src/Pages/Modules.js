@@ -49,8 +49,8 @@ class Modules extends React.Component {
   };
 
   render() {
-    console.log(this.state.display);
-    console.log(this.props.user.role);
+    console.log("dataaaaa", this.state.data);
+
     return (
       <>
         <div>
@@ -77,7 +77,8 @@ class Modules extends React.Component {
                   start_date,
                   end_date,
                   img,
-                  mentor
+                  mentor,
+                  mentor_id
                 }) => (
                   <li className="card-list">
                     <Card
@@ -117,10 +118,10 @@ class Modules extends React.Component {
                           }}
                           extra
                         >
-                          <a>
+                          <Link to={`/dashboard/profiles/${mentor_id}`}>
                             <Icon name="user" />
                             {mentor}
-                          </a>
+                          </Link>
                         </Card.Content>
                       </Card.Content>
                     </Card>
