@@ -14,7 +14,7 @@ function Login(props) {
     e.preventDefault();
     const info = { email, password };
 
-    const resp = await fetch(`${URL}/login`, {
+    const resp = await fetch(`${URL}login`, {
       method: "POST",
       headers: {
         Accept: "application/json",

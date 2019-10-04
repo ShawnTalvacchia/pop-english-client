@@ -4,8 +4,7 @@ import { DateInput } from "semantic-ui-calendar-react";
 import moment from "moment";
 import "moment/locale/ru";
 
-const URL = "Rprocess.env.EACT_APP_BACKEND_URL";
-
+const URL = process.env.REACT_APP_BACKEND_URL;
 class EditProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,7 @@ class EditProfile extends React.Component {
 
   fetchProfile = async () => {
     try {
-      const response = await fetch(URL + "/profile", {
+      const response = await fetch(URL + "profile", {
         headers: new Headers({
           Authorization: `Token ${this.state.token}`,
           "Content-Type": "application/json"
@@ -58,7 +57,7 @@ class EditProfile extends React.Component {
 
     const profile = { first_name, last_name, img, about, email };
     console.log("profile", profile);
-    const response = await fetch("/edit_profile", {
+    const response = await fetch(URL + "edit_profile", {
       method: "POST",
       headers: {
         Authorization: `Token ${this.state.user.token}`,

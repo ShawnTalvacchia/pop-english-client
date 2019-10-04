@@ -4,6 +4,7 @@ import { DateInput } from "semantic-ui-calendar-react";
 import moment from "moment";
 import "moment/locale/ru";
 
+const URL = process.env.REACT_APP_BACKEND_URL;
 class NewModuleForm extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +48,7 @@ class NewModuleForm extends React.Component {
       syllabus
     };
     console.log("module", module);
-    const response = await fetch("/create_module", {
+    const response = await fetch(URL + "create_module", {
       method: "POST",
       headers: {
         Authorization: `Token ${this.state.user.token}`,

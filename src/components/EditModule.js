@@ -4,6 +4,7 @@ import { DateInput } from "semantic-ui-calendar-react";
 import moment from "moment";
 import "moment/locale/ru";
 
+const URL = process.env.REACT_APP_BACKEND_URL;
 class EditModule extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ class EditModule extends React.Component {
   };
 
   handleDelete = async e => {
-    const response = await fetch(`/modules/${this.state.id}/delete`, {
+    const response = await fetch(URL + `modules/${this.state.id}/delete`, {
       method: "POST",
       headers: {
         Authorization: `Token ${this.state.token}`,
@@ -61,7 +62,7 @@ class EditModule extends React.Component {
       img_url,
       syllabus
     };
-    const response = await fetch(`/modules/${this.state.id}/edit`, {
+    const response = await fetch(URL + `modules/${this.state.id}/edit`, {
       method: "POST",
       headers: {
         Authorization: `Token ${this.state.token}`,

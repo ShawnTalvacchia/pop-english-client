@@ -10,6 +10,8 @@ import Loading from "../components/loader";
 import CommentAccordion from "../components/CommentAccordion";
 import "../static/modules.css";
 
+const URL = process.env.REACT_APP_BACKEND_URL;
+
 var moment = require("moment");
 moment().locale("en");
 
@@ -17,7 +19,7 @@ const Profile = props => {
   const [id, setId] = useState(props.match.params.id);
   console.log("props", props);
 
-  const [data, loading] = useFetch(`/profiles/${id}`);
+  const [data, loading] = useFetch( URL + `profiles/${id}`);
   console.log("TESTING", id, data);
 
   return (

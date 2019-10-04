@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 import { Button } from "react-bootstrap";
+import TextLoop from "react-text-loop";
+
 import "../static/App.css";
 import "../static/devices.min.css";
 
@@ -116,6 +118,42 @@ class Home extends Component {
                   <div className="home"></div>
                   <div className="bottom-bar"></div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="product-description">
+          <div className="row">
+            <h3 className="pd-title">
+              Communication skills to advance your life
+            </h3>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <img className="hero-img" src="../images/study.png"></img>
+            </div>
+            <div className="col-md-6 product-info">
+              <div className="info-line">
+                <h3 style={{ fontSize: "2rem" }}>We make practice</h3>
+                <TextLoop
+                  interval={6000}
+                  springConfig={{ stiffness: 180, damping: 8 }}
+                  className="info-line-loop"
+                >
+                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                    interesting
+                  </h2>
+                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                    targeted
+                  </h2>
+                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                    convenient
+                  </h2>
+                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>
+                    releveant
+                  </h2>
+                  <h2 style={{ fontSize: "3rem", color: "#ef3c6b" }}>fun</h2>
+                </TextLoop>
               </div>
             </div>
           </div>

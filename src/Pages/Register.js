@@ -57,7 +57,8 @@ const Register = props => {
       }
     }
   };
-  
+  //
+
   if (user.id !== null) window.location.replace(window.location.origin);
   else
     return (

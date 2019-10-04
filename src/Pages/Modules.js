@@ -11,6 +11,7 @@ import "../static/modules.css";
 var moment = require("moment");
 moment().locale("en");
 
+const URL = process.env.REACT_APP_BACKEND_URL;
 class Modules extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +30,7 @@ class Modules extends React.Component {
   }
 
   fetchData = async () => {
-    const response = await fetch(`/modules`, {
+    const response = await fetch(URL + `modules`, {
       headers: {
         Authorization: `Token ${this.state.token}`,
         "Content-Type": "application/json"

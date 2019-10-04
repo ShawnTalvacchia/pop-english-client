@@ -7,7 +7,7 @@ import Loading from "../components/loader";
 import ModuleAccordion from "../components/ModuleAccordion";
 
 import "../static/modules.css";
-
+const URL = process.env.REACT_APP_BACKEND_URL;
 // import moment from "moment";
 // import "moment/locale/ru";
 
@@ -23,7 +23,7 @@ const SingleModule = props => {
   //   setDisplay("")
   // }
 
-  const [data, loading] = useFetch(`/modules/${id}`);
+  const [data, loading] = useFetch(URL + `modules/${id}`);
   console.log("TESTING", data);
 
   return (

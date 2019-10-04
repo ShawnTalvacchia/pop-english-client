@@ -38,7 +38,7 @@ class App extends React.Component {
 
   fetchUser = async () => {
     try {
-      const response = await fetch(URL + "/test", {
+      const response = await fetch(URL + "test", {
         headers: new Headers({
           Authorization: `Token ${this.state.token}`,
           "Content-Type": "application/json"

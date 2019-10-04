@@ -4,13 +4,13 @@ import { HashLink as Link } from "react-router-hash-link";
 
 import "./Toolbar.css";
 
-const URL = "http://127.0.0.1:5000";
+const URL = process.env.REACT_APP_BACKEND_URL;
 
 const Toolbar = props => {
   const [user, setUser] = useState(props.user);
   const handleLogout = async e => {
     e.preventDefault();
-    const resp = await fetch(URL + "/logout", {
+    const resp = await fetch(URL + "logout", {
       headers: {
         Authorization: `Token ${props.token}`,
         Accept: "application/json",

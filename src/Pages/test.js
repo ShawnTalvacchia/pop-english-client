@@ -11,9 +11,10 @@ import "../static/modules.css";
 import { DateTimeInput } from "semantic-ui-calendar-react";
 var moment = require("moment");
 moment().locale("en");
+const URL = process.env.REACT_APP_BACKEND_URL;
 
 const Modules = props => {
-  const [data, loading] = useFetch("/modules");
+  const [data, loading] = useFetch(URL + "modules");
   const [display, setDisplay] = useState("none");
   const [isload, setIsload] = useState(false);
   const [role, setRole] = useState(props.user.role);
